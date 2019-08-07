@@ -11,8 +11,6 @@ let ethereumRate;
 
                 setInterval( function checkConnection(){
                     if(typeof(web3) === 'undefined') {
-                        
-                        console.log("Metamask is not installed.");
                         connection ="Metamask is not installed.";
                         $('#metamaskConnection').text(connection); 
                     
@@ -20,9 +18,6 @@ let ethereumRate;
 
                     else {
 
-                        //console.log("Connected to Metamask.");
-                        //connection ="Yes";
-                        //$('#metamaskConnection').text(connection); 
                         mainAccount = web3.eth.getAccounts(function(err, accounts){
                             mainAccount = accounts[0];
                             $('#referralEthereumAddress').text(mainAccount);   
@@ -77,7 +72,7 @@ let ethereumRate;
                     } 
                     catch (error) {
                     // User denied account access...
-                        $('#metamaskConnection').text("Connected is not MetaMask");
+                        $('#metamaskConnection').text("MetaMask is not enabled");
                     }
                 
                 }
@@ -188,12 +183,8 @@ let ethereumRate;
                     return console.log(error);
 
                 }
-                // console.log(ethereumRate);
-                // console.log(result/1000000000000000000);
-                // console.log((result/1000000000000000000)*ethereumRate);
                 $('#ethereumBalance').text((result/1000000000000000000).toString().substr(0,10));
-                $('#ethereumBalanceUSD').text(((result/1000000000000000000)*ethereumRate).toString().substr(0,10));
-                        
+                $('#ethereumBalanceUSD').text(((result/1000000000000000000)*ethereumRate).toString().substr(0,10));       
 
                 });
             }
@@ -371,7 +362,6 @@ let ethereumRate;
             }
 
             function sellingWithdraw(){
-                console.log("yes");
                 contract.sellingWithdraw.sendTransaction(
                     
                     {gasPrice: web3.toWei(4.1, 'Gwei')}, 
@@ -392,8 +382,6 @@ let ethereumRate;
                 let address = $('#address').val();
                 let val= ($('#buyvalue').val()*1000000000000000000);  
                 var tx = {from : mainAccount};
-                console.log(address);
-                console.log(val);
                 contract.buy.sendTransaction(
                     address,
                     {from: mainAccount, gas: 3000000, value: val}, function(err, res){
@@ -409,7 +397,6 @@ let ethereumRate;
             function sell(){
 
                 let val= ($('#sellvalue').val()*1000000000000000000);
-                console.log(val);
                 contract.sell.sendTransaction(
                     val,
                     {gasPrice: web3.toWei(4.1, 'Gwei')}, 
@@ -426,9 +413,7 @@ let ethereumRate;
             function transfer() {
 
                 let address = $('#transferaddress').val();
-                let amount = ($('#transferamount').val()*1000000000000000000);
-                console.log(address);
-                console.log(amount);    
+                let amount = ($('#transferamount').val()*1000000000000000000);   
                 contract.transfer.sendTransaction(
                     address,amount, 
                     {gasPrice: web3.toWei(4.1, 'Gwei')}, 
