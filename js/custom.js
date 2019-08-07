@@ -11,7 +11,7 @@ let ethereumRate;
 
                 setInterval( function checkConnection(){
                     if(typeof(web3) === 'undefined') {
-                        connection ="Metamask is not installed.";
+                        connection ="Metamask is not available";
                         $('#metamaskConnection').text(connection); 
                     
                     }
@@ -67,7 +67,7 @@ let ethereumRate;
                         // Request account access if needed
                         ethereum.enable();
                         // Acccounts now exposed
-                        web3.eth.sendTransaction({/* ... */});
+                        web3.eth.sendTransaction({/* ... */});2
                     } 
                     catch (error) {
                     // User denied account access...
