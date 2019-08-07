@@ -12,17 +12,17 @@ let ethereumRate;
                 setInterval( function checkConnection(){
                     if(typeof(web3) === 'undefined') {
                         
-                        return console.log("Metamask is not installed.");
-                        connection ="No";
+                        console.log("Metamask is not installed.");
+                        connection ="Metamask is not installed.";
                         $('#metamaskConnection').text(connection); 
                     
                     }
 
                     else {
 
-                        console.log("Connected to Metamask.");
-                        connection ="Yes";
-                        $('#metamaskConnection').text(connection); 
+                        //console.log("Connected to Metamask.");
+                        //connection ="Yes";
+                        //$('#metamaskConnection').text(connection); 
                         mainAccount = web3.eth.getAccounts(function(err, accounts){
                             mainAccount = accounts[0];
                             $('#referralEthereumAddress').text(mainAccount);   
@@ -72,10 +72,12 @@ let ethereumRate;
                         ethereum.enable();
                         // Acccounts now exposed
                         web3.eth.sendTransaction({/* ... */});
+                        $('#metamaskConnection').text("Connected to MetaMask");
                     
                     } 
                     catch (error) {
                     // User denied account access...
+                        $('#metamaskConnection').text("Connected is not MetaMask");
                     }
                 
                 }
