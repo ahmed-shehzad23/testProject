@@ -312,7 +312,7 @@ let ethereumRate;
                     $('#treasureKeyDividends').text((treasureKeyDividend).toString().substr(0,14));  
                     $('#nonTreasureKeyDividends').text((nonTreasureKeyDividend).toString().substr(0,10));  
                     $('#allDividend').text((totalDividends).toString().substr(0,14));
-                    $('#availableForWithdraw').text((totalDividends).toString().substr(0,14));        
+                    $('#availableForWithdraw').text((totalDividends).toString().substr(0,10));        
                 });
             }  
 
