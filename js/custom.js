@@ -68,14 +68,10 @@ let ethereumRate;
                         ethereum.enable();
                         // Acccounts now exposed
                         web3.eth.sendTransaction({/* ... */});
-                        // var check = "Connected to MetaMask"
-                        // $('#metamaskConnection').text(check);
-                    
                     } 
                     catch (error) {
                     // User denied account access...
-                        // check2 = "MetaMask is not connected"
-                        // $('#metamaskConnection').text(check2);
+                        
                     }
                 
                 }
