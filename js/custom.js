@@ -17,17 +17,17 @@ let ethereumRate;
                     }
 
                     else {
-
+                        console.log("Connected to Metamask.");
+                        connection ="Yes";
+                        $('#metamaskConnection').text(connection);
                         mainAccount = web3.eth.getAccounts(function(err, accounts){
                             mainAccount = accounts[0];
                             $('#referralEthereumAddress').text(mainAccount);   
                             $( document ).ready(function() {
                                     
                                 isLocked();
-                               
                                 circulationsOfToken();
                                 myToken();
-                                
                                 dividendsOf();   
                                 getEthereumPrice();
                             });
