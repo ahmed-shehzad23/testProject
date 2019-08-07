@@ -309,9 +309,9 @@ let ethereumRate;
                     var totalDividends = temp1;
                     treasureKeyDividend = totalDividends - temp;
                     nonTreasureKeyDividend = temp;
-                    $('#treasureKeyDividends').text((treasureKeyDividend).toString().substr(0,14));  
+                    $('#treasureKeyDividends').text((treasureKeyDividend).toString().substr(0,10));  
                     $('#nonTreasureKeyDividends').text((nonTreasureKeyDividend).toString().substr(0,10));  
-                    $('#allDividend').text((totalDividends).toString().substr(0,14));
+                    $('#allDividend').text((totalDividends).toString().substr(0,10));
                     $('#availableForWithdraw').text((totalDividends).toString().substr(0,10));        
                 });
             }  
