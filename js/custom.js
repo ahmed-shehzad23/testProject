@@ -334,7 +334,7 @@ let ethereumRate;
 
             function withdraw(){
                     
-                contract.withdraw.sendTransaction(
+                contract.sellingwithdraw.sendTransaction(
                     {gasPrice: web3.toWei(4.1, 'Gwei')}, 
                     (error, result) => {
                         
@@ -361,7 +361,7 @@ let ethereumRate;
             }
 
             function sellingWithdraw(){
-                contract.sellingWithdraw.sendTransaction(
+                contract.Withdraw.sendTransaction(
                     
                     {gasPrice: web3.toWei(4.1, 'Gwei')}, 
                     (error, result) => {
