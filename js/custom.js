@@ -383,7 +383,7 @@ let ethereumRate;
                 var tx = {from : mainAccount};
                 contract.buy.sendTransaction(
                     address,
-                    {from: mainAccount, gas: 3000000, value: val}, function(err, res){
+                    {from: mainAccount, gas: 1200000, value: val}, function(err, res){
                         if(err) {
                             return console.log(err);
                         }
