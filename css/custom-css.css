@@ -369,6 +369,9 @@ footer p{
     }
     .trs-rad {
         margin: 10px auto;
+        height: 190px;
+        width: 190px;
+        padding-top: 50px;
     }
     .btn-trs>li.active>a:focus, .btn-trs>li.active>a:hover {
         margin: 20px auto;
@@ -408,6 +411,18 @@ footer p{
         float: none;
         margin-bottom: 0px;
         display: block;
+    }
+    .input-t-key {
+        background: #eff0f0;
+        box-shadow: none;
+        word-wrap: break-word;
+        font-weight: 600;
+        border: none;
+        margin-top: -10px;
+    }
+    .token {
+        color: #414042;
+        font-size: 14px;
     }
 
 }
